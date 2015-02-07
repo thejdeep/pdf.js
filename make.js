@@ -343,6 +343,7 @@ target.dist = function() {
                    JSON.stringify(bowerManifest, null, 2));
 
   echo();
+  target.minifyFiles();
   echo('### Commiting changes');
 
   cd(DIST_DIR);
@@ -358,6 +359,11 @@ target.dist = function() {
   echo('  cd ' + DIST_DIR + '; git push --tags ' + DIST_REPO_URL + ' master');
   echo();
 };
+
+// Minify JS files using Closure Compiler
+target.minifyFiles = function() {
+
+}
 
 target.publish = function() {
   target.generic();
